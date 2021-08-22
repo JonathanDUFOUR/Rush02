@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_ret.h                                            :+:      :+:    :+:   */
+/*   r2_dict_print.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 01:48:09 by jodufour          #+#    #+#             */
-/*   Updated: 2021/08/23 00:07:51 by jodufour         ###   ########.fr       */
+/*   Created: 2021/08/23 00:51:00 by jodufour          #+#    #+#             */
+/*   Updated: 2021/08/23 01:06:24 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef E_RET_H
-# define E_RET_H
+#include <stdio.h>
+#include "type/t_dict.h"
 
-enum	e_ret
+void	r2_dict_print(t_dict *dict)
 {
-	SUCCESS,
-	AC_ERR,
-	OPEN_ERR,
-	READ_ERR,
-	DICT_ERR,
-	FORMAT_ERR,
-	MALLOC_ERR,
-	NB_LIMITS_ERR
-};
-
-#endif
+	printf("\e[36mTHAT IS WHAT I'VE PARSED\e[0m\n\n");
+	printf("| %12s%8s | %11s%9s |\n", "number", "", "word", "");
+	printf("|----------------------|----------------------|\n");
+	while (dict && dict->word)
+	{
+		printf("| %20llu | %20s |\n", dict->n, dict->word);
+		++dict;
+	}
+}

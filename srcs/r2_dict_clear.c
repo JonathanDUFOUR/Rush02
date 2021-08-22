@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_ret.h                                            :+:      :+:    :+:   */
+/*   r2_dict_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 01:48:09 by jodufour          #+#    #+#             */
-/*   Updated: 2021/08/23 00:07:51 by jodufour         ###   ########.fr       */
+/*   Created: 2021/08/23 00:39:35 by jodufour          #+#    #+#             */
+/*   Updated: 2021/08/23 00:42:38 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef E_RET_H
-# define E_RET_H
+#include <stdlib.h>
+#include "type/t_dict.h"
 
-enum	e_ret
+void	r2_dict_clear(t_dict *dict)
 {
-	SUCCESS,
-	AC_ERR,
-	OPEN_ERR,
-	READ_ERR,
-	DICT_ERR,
-	FORMAT_ERR,
-	MALLOC_ERR,
-	NB_LIMITS_ERR
-};
+	t_dict	*dent;
 
-#endif
+	dent = dict;
+	while (dict && dict->word)
+	{
+		dict->n = 0;
+		free(dict->word);
+		dict->word = NULL;
+		++dict;
+	}
+	free(dent);
+}

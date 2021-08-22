@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/22 01:16:11 by jodufour          #+#    #+#              #
-#    Updated: 2021/08/22 04:22:16 by jodufour         ###   ########.fr        #
+#    Updated: 2021/08/23 00:57:19 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,14 @@ PRV_DIR	=	private/
 #            SOURCE FILES            #
 ######################################
 SRC		=	\
+			${addprefix debug/,		\
+				r2_dict_print.c		\
+			}						\
 			${addprefix parsing/,	\
-				r2_parse_dict.c		\
+				r2_dict_build.c		\
+				r2_dict_fill.c		\
+				r2_parse.c			\
+				r2_read.c			\
 			}						\
 			${addprefix utils/,		\
 				r2_a_to_llu.c		\
@@ -45,11 +51,14 @@ SRC		=	\
 				r2_llu_len.c		\
 				r2_llu_to_a.c		\
 				r2_str_is_equ.c		\
+				r2_str_join.c		\
+				r2_str_len.c		\
 				r2_str_trim.c		\
 			}						\
 			main.c					\
 			r2_check_format.c		\
 			r2_check_nb.c			\
+			r2_dict_clear.c			\
 			r2_err_msg.c			\
 			r2_run.c
 

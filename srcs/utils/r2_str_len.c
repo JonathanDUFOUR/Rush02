@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e_ret.h                                            :+:      :+:    :+:   */
+/*   r2_str_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/22 01:48:09 by jodufour          #+#    #+#             */
-/*   Updated: 2021/08/23 00:07:51 by jodufour         ###   ########.fr       */
+/*   Created: 2021/08/22 15:40:46 by jodufour          #+#    #+#             */
+/*   Updated: 2021/08/22 15:41:25 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef E_RET_H
-# define E_RET_H
+#include <stddef.h>
 
-enum	e_ret
+size_t	r2_str_len(char const *s)
 {
-	SUCCESS,
-	AC_ERR,
-	OPEN_ERR,
-	READ_ERR,
-	DICT_ERR,
-	FORMAT_ERR,
-	MALLOC_ERR,
-	NB_LIMITS_ERR
-};
+	register char const	*p = s;
 
-#endif
+	while (*p)
+		++p;
+	return (p - s);
+}
