@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/22 01:16:11 by jodufour          #+#    #+#              #
-#    Updated: 2021/08/22 03:47:12 by jodufour         ###   ########.fr        #
+#    Updated: 2021/08/22 04:22:16 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,18 +35,23 @@ PRV_DIR	=	private/
 #            SOURCE FILES            #
 ######################################
 SRC		=	\
-			main.c				\
-			r2_a_to_llu.c		\
-			r2_check_format.c	\
-			r2_check_nb.c		\
-			r2_err_msg.c		\
-			r2_is_digit.c		\
-			r2_is_space.c		\
-			r2_llu_len.c		\
-			r2_llu_to_a.c		\
-			r2_run.c			\
-			r2_str_is_equ.c		\
-			r2_str_trim.c
+			${addprefix parsing/,	\
+				r2_parse_dict.c		\
+			}						\
+			${addprefix utils/,		\
+				r2_a_to_llu.c		\
+				r2_is_digit.c		\
+				r2_is_space.c		\
+				r2_llu_len.c		\
+				r2_llu_to_a.c		\
+				r2_str_is_equ.c		\
+				r2_str_trim.c		\
+			}						\
+			main.c					\
+			r2_check_format.c		\
+			r2_check_nb.c			\
+			r2_err_msg.c			\
+			r2_run.c
 
 ######################################
 #            OBJECT FILES            #

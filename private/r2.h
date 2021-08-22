@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 01:54:08 by jodufour          #+#    #+#             */
-/*   Updated: 2021/08/22 03:49:21 by jodufour         ###   ########.fr       */
+/*   Updated: 2021/08/22 04:21:22 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@
 # include <stddef.h>
 # include <stdbool.h>
 # include "type/t_int.h"
+# include "type/t_dict.h"
 
-int			r2_run(char const *dict, char const *s);
 int			r2_check_format(char const *s);
 int			r2_check_nb(char const *s, t_lluint *nb);
+int			r2_parse_dict(char const *dict_path, t_dict **const dict);
+int			r2_run(char const *dict, char const *s);
+
 
 void		r2_err_msg(int err);
 
